@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <meta charset="utf-8" />
+  <title>Product List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+
+  <body>
+
+      <table class="ui single line table">
+         <thead>
+            <td>Product ID</td>
+            <td>Product Name</td>
+         </thead>
+
+         {% for row in rows %}
+          <tr>
+            <td class="selectable">
+              <a href="{{ url_for('product_details') }}">{{row['pid']}}</a>
+            </td>
+            <td>{{row['name']}}</td>
+          </tr>
+         {% endfor %}
+      </table>
+      <h5 class="ui header"></h5>
+      <a href = "{{ url_for('home') }}">Go back to home page</a>
+
+    </body>
+
+</html>
