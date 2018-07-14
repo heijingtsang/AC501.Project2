@@ -1,22 +1,25 @@
 <!doctype html>
 <html>
   <meta charset="utf-8" />
-  <title>Product List</title>
+  <title>Product Details</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
 
   <body>
-  <h1 class="ui header">Product Name: {{ info.name }}</h1>
-  <h2 class="ui header">Product ID: {{ info.pid }}</h2>
-  <h2 class="ui header">Origin: {{ info.origin }}</h2>
-  <h2 class="ui header">Description:</h2>
-  <h3 class="ui header">{{ info.description }}</h3>
-  <h2 class="ui header">Quantity: {{ info.quantity }}</h2>
-  <h2 class="ui header">Price: {{ info.unit_price }}</h2>
 
-  <h1 class="ui header"></h1>
-  <h2 class="ui header">
-      <a href="{{ url_for('index_products') }}">Back to Product List</a>
-  </h2>
+    <h2 class="ui header">Product Name: {{ info.name }}</h2>
+    <h2 class="ui header">Product ID: {{ info.pid }}</h2>
+    <h2 class="ui header">Origin: {{ info.origin }}</h2>
+    <h2 class="ui header">Description:</h2>
+    <h3 class="ui header">{{ info.description }}</h3>
+    <h2 class="ui header">Quantity: {{ info.quantity }}</h2>
+    <h2 class="ui header">Price: {{ info.unit_price }}</h2>
+
+    <h1 class="ui header"></h1>
+    <h2 class="ui header">
+        <a href="{{ url_for('index_products') }}">Back to Product Listing</a>
+    </h2>
 
   </body>
+
+</html>

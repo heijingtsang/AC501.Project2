@@ -1,11 +1,9 @@
-from flask import Flask, render_template, url_for, session, redirect
+from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Products.db'
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 class Products(db.Model):
     pid = db.Column(db.Integer, primary_key=True, nullable=False)
@@ -37,11 +35,11 @@ def index_products():
     return render_template('index.html', rows=Products.query.all())
 
 
-@app.route('/products/<int:pid>', methods=['GET',])
+@app.route('/products/<int:pid>')
 def product_details(pid):
     return render_template('details.html', info=Products.query.filter_by(pid=pid).first())
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=8000)
+    app.run()
 

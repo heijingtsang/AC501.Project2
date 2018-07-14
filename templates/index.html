@@ -7,10 +7,13 @@
 
   <body>
 
+    <h2 class="ui center aligned header">Products Listing</h2>
+
       <table class="ui single line table">
          <thead>
             <td>Product ID</td>
             <td>Product Name</td>
+            <td>Unit Price</td>
          </thead>
 
          {% for row in rows %}
@@ -19,11 +22,12 @@
               <a href="{{ url_for('product_details', pid=row['pid']) }}">{{row['pid']}}</a>
             </td>
             <td>{{row['name']}}</td>
+            <td>{{ row['unit_price'] }}</td>
           </tr>
          {% endfor %}
       </table>
       <h5 class="ui header"></h5>
-      <a href = "{{ url_for('home') }}">Go back to home page</a>
+      <a href = "{{ url_for('home') }}">Go back to Home Page</a>
 
     </body>
 
